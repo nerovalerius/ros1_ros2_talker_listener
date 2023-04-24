@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  ros1:
+    container_name: ros1
+    build:
+      context: ./
+      dockerfile: ros1.Dockerfile
+
+  ros2:
+    container_name: ros2
+    build:
+      context: ./
+      dockerfile: ros2.demo.Dockerfile
+
+  bridge:
+    container_name: ros1_ros2_bridge
+    image: ros:foxy-ros1-bridge
+    command: ros2 run ros1_bridge dynamic_bridge
