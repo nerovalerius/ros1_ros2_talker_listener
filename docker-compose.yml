@@ -12,7 +12,7 @@ services:
     container_name: ros2
     build:
       context: ./
-      dockerfile: ros2.demo.Dockerfile
+      dockerfile: ros2.Dockerfile
 
   bridge:
     container_name: ros1_ros2_bridge
